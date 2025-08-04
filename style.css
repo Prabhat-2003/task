@@ -78,6 +78,14 @@
     .nav-links a:hover::after {
       width: 100%;
     }
+    .logo img{
+      height: 60px;
+      vertical-align: middle;
+      filter: brightness(0) invert(1);
+    }
+    .logo span{
+      font-size: 28px;
+    }
 
     /* Hero section */
     .hero {
@@ -279,8 +287,9 @@
   
 
 @media (max-width: 768px) {
-  .nav-container {  
+  .container {  
     flex-direction: column;
+    align-items: flex-start;
   }
 
   .logo {
@@ -288,9 +297,12 @@
   }
 
   .nav-links {
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 5px;
+   margin-top:3px ;
+    /* flex-wrap: wrap;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: 1rem; */
   }
 
   .nav-links li {
