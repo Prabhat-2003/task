@@ -193,12 +193,7 @@
   align-items: center;
   justify-content: space-between;
 }
-.about-section .about-image-wrapper .about-image {
-  width: 400px;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 50%;
-}
+
 
 .about-section .about-details .section-title {
   padding: 0;
@@ -221,6 +216,21 @@
   /* border-radius: 8 px; */
   background-color: rgb(238, 113, 68) ;
 }
+.about-section .social-link-list {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+
+.about-section .social-link-list .social-link {
+  color: #3b141c;
+  font-size: 1.5rem;
+  transition: 0.2 ease;
+}
+.about-section .social-link-list .social-link:hover {
+  color: #f3961c;
+}
+
 
     /* Footer */
     footer {
@@ -310,7 +320,7 @@
 .membership-plans {
   display: inline-flex;
   gap: 90px;
-  padding: 0 110px;
+  padding: 0 300px;
   min-width: 100%;
 }
 
@@ -444,6 +454,12 @@
   .about-section .about-details {
     max-width: 60%;
   }
+  .about-section .about-image-wrapper .about-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+}
 }
   
 
