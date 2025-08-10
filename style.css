@@ -25,7 +25,7 @@
     }
 
     .container {
-      width: 90%;
+      width: 100%;
       max-width: 1400px;
       margin: 0 auto;
       display: flex;
@@ -86,6 +86,14 @@
     .logo span{
       font-size: 28px;
     }
+    .menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: white;
+  z-index: 1001;
+  margin-left: auto;
+}
 
     /* Hero section */
     .hero {
@@ -124,11 +132,12 @@
 }
 
 .hero p.slogan {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-bottom: 2rem;
   line-height: 1.6;
   color: white;
   max-width: 469px;
+  font-family:"Metal Mania", system-ui;
 }
 
 .hero .cta-button {
@@ -158,8 +167,8 @@
       color: #000;
     }
     .about-section .about-image-wrapper .about-image {
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
   object-fit: cover;
   border-radius: 50%;
 }
@@ -216,7 +225,7 @@
     /* Footer */
     footer {
       background-color: #000;
-      padding: 3rem 0;
+      padding: 1rem 0;
       text-align: center;
       margin-top: auto;
     }
@@ -261,6 +270,158 @@
       color: #aaa;
     }
 
+    /* Membership section */
+.membership-section {
+  padding: 100px 0;
+  background: #111;
+  color: white;
+  text-align: center;
+}
+
+ .section-titles {
+  color: #fff;
+  text-align: center;
+  padding: 60px 0 25px;
+  text-transform: uppercase;
+  font-size: 2rem;
+} 
+
+.section-titles::after {
+  content: "";
+  width: 100px;
+  height: 4px;
+  background: #ff5e14;
+  display: block;
+  margin: 15px auto 30px;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #ff5e14;
+  margin-bottom: 50px;
+}
+
+/* Horizontal Cards Container */
+.membership-plans-container {
+  overflow-x: auto;
+  padding-bottom: 20px;
+}
+
+.membership-plans {
+  display: inline-flex;
+  gap: 90px;
+  padding: 0 110px;
+  min-width: 100%;
+}
+
+/* Individual Cards */
+.plan-card {
+  background: #222;
+  border-radius: 10px;
+  padding: 30px;
+  width: 320px;
+  flex-shrink: 0;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+/* Popular Tag */
+.popular-tag {
+  background: #ff5e14;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.plan-header h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #ff5e14;
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.price span {
+  font-size: 2.5rem;
+}
+
+/* Features List */
+.plan-features {
+  list-style: none;
+  text-align: left;
+  margin: 30px 0;
+}
+
+.plan-features li {
+  margin-bottom: 15px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.plan-features li::before {
+  content: "✓";
+  color: #4CAF50;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.plan-features .not-included::before {
+  content: "✗";
+  color: #f44336;
+}
+
+/* CTA Button */
+.plan-cta {
+  display: inline-block;
+  background: #ff5e14;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.plan-cta:hover {
+  background: #e04b00;
+  transform: scale(1.05);
+}
+
+/* Membership Notes */
+.membership-notes {
+  margin-top: 50px;
+  font-size: 0.9rem;
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Custom Scrollbar for Horizontal Scrolling */
+.membership-plans-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.membership-plans-container::-webkit-scrollbar-track {
+  background: #333;
+  border-radius: 10px;
+}
+
+.membership-plans-container::-webkit-scrollbar-thumb {
+  background: #ff5e14;
+  border-radius: 10px;
+}
    /* Responsive styles */
 @media (max-width: 992px) {
   .hero h1.core {  
@@ -276,8 +437,8 @@
   }
   
   .about-image {
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
   }
   
   .about-section .about-details {
@@ -288,36 +449,59 @@
 
 @media (max-width: 768px) {
   .container {  
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
   }
 
   .logo {
     margin-bottom: 1.5rem;
   }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 5px;
-   margin-top:3px ;
-    /* flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 1rem; */
+   .menu-toggle {
+     display: block;
   }
-
+ .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: rgba(31, 30, 30, 0.95);
+    flex-direction: column;
+    align-items: center;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    padding-top: 176px;
+  }
+  .nav-links.active {
+    right: 0;
+  }
+  
+  .nav-links li {
+    margin: 1.5rem 0;
+    margin-left: 0;
+  }
+  
+  .nav-links a {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+  }
+   .bg-img {
+    object-position: 10% center; 
+  }
   .nav-links li {
     margin: 0.5rem 1rem;
   }
 
   .hero h1.core {  
     font-size: 2.2rem;
-    letter-spacing: 10px;
-    margin-bottom: 1.5rem;
+    letter-spacing: 5px;
+    margin-bottom: 1rem;
   }
 
   .hero p.slogan {  
     font-size: 1.1rem;
-    max-width: 90%;
+    max-width: 74%;
+    padding: 0 1 rem;
   }
 
   .cta-button {
@@ -336,8 +520,8 @@
   }
   
   .about-image {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
   }
   
   .about-section .about-details {
@@ -354,7 +538,60 @@
     margin: 30px 0;
     line-height: 1.8;
   }
+   .membership-section {
+    padding: 60px 20px;
+  }
+
+  .membership-plans {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 0;
+    min-width: auto;
+    overflow-x: visible;
+  }
+
+  .plan-card {
+    width: 100%;
+    max-width: 350px;
+    padding: 25px;
+    margin: 0 auto;
+  }
+
+  .section-titles {
+    font-size: 1.8rem;
+    padding: 30px 0 15px;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .plan-header h3 {
+    font-size: 1.6rem;
+  }
+
+  .price {
+    font-size: 1.5rem;
+  }
+
+  .price span {
+    font-size: 2rem;
+  }
+
+  .plan-features li {
+    font-size: 0.95rem;
+  }
+
+  /* Remove scrollbar styles for mobile */
+  .membership-plans-container::-webkit-scrollbar {
+    display: none;
+  }
+
 }
+
 
 @media (max-width: 480px) {
   .hero h1.core {  
@@ -395,9 +632,21 @@
   
   .about-section .about-details .text {
     font-size: 1rem;
-    margin: 20px 0;
+    margin: 70px 67px;
   }
   .nav-links li {
     margin: 0.5rem;
+  }
+   .plan-card {
+    padding: 20px;
+  }
+  
+  .section-titles {
+    font-size: 1.6rem;
+  }
+  
+  .popular-tag {
+    font-size: 0.8rem;
+    padding: 3px 12px;
   }
 }

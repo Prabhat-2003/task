@@ -5,29 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Simple Responsive Landing Page</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
   <link rel="Stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 </head>
 <body>
-
-  <header>
-    <div class="container">
-      <!-- <div class="logo"> CoreX</div> -->
-       <div class="logo">
-        <img src="image/icon.jpg" alt="CoreX Logo">
-        <span>CoreX</span>
-       </div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Membership</a></li>
-          <li><a href="#">Trainers</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
+<header>
+  <div class="container">
+    <div class="logo">
+      <img src="image/icon.jpg" alt="CoreX Logo">
+      <span>CoreX</span>
     </div>
-  </header>
-
+    <div class="menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
+       <i class="fas fa-times" style="display:none;"></i>
+    </div>
+    <nav>
+      <ul class="nav-links" id="mainNav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#membership">Membership</a></li>
+        <li><a href="#tr">Trainers</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
   <section class="hero">
     <img src = "./image/gym.jpg" alt="Background" class="bg-img">
     <div class="container">
@@ -55,7 +59,71 @@
           </div>
         </div>
       </section>
-  </main>
+  
+  
+  <section class="membership-section" id="membership">
+    <h2 class="section-titles">Choose Your Membership</h2>
+    <p class="section-subtitle">Get started on your fitness journey today</p>
+    
+  <div class="container">
+    
+    <div class="membership-plans">
+      <!-- Basic Plan -->
+      <div class="plan-card">
+        <div class="plan-header">
+          <h3>Basic</h3>
+          <p class="price"><span>₹999</span>/month</p>
+        </div>
+        <ul class="plan-features">
+          <li><i class="fas fa-check"></i> Gym Access (7AM-9PM)</li>
+          <li><i class="fas fa-check"></i> Free Wi-Fi</li>
+          <li><i class="fas fa-check"></i> Locker Access</li>
+          <li><i class="fas fa-times"></i> Group Classes</li>
+          <li><i class="fas fa-times"></i> Personal Trainer</li>
+        </ul>
+        <a href="#" class="cta-button">Join Now</a>
+      </div>
+      
+      <!-- Popular/Pro Plan -->
+      <div class="plan-card popular">
+        <div class="popular-tag">Most Popular</div>
+        <div class="plan-header">
+          <h3>Pro</h3>
+          <p class="price"><span>₹1,999</span>/month</p>
+        </div>
+        <ul class="plan-features">
+          <li><i class="fas fa-check"></i> 24/7 Gym Access</li>
+          <li><i class="fas fa-check"></i> All Basic Benefits</li>
+          <li><i class="fas fa-check"></i> Unlimited Group Classes</li>
+          <li><i class="fas fa-check"></i> 2 PT Sessions/Month</li>
+          <li><i class="fas fa-check"></i> Nutrition Guide</li>
+        </ul>
+        <a href="#" class="cta-button">Join Now</a>
+      </div>
+      
+      <!-- Premium Plan -->
+      <div class="plan-card">
+        <div class="plan-header">
+          <h3>Premium</h3>
+          <p class="price"><span>₹3,499</span>/month</p>
+        </div>
+        <ul class="plan-features">
+          <li><i class="fas fa-check"></i> All Pro Benefits</li>
+          <li><i class="fas fa-check"></i> Unlimited PT Sessions</li>
+          <li><i class="fas fa-check"></i> Custom Workout Plan</li>
+          <li><i class="fas fa-check"></i> Body Composition Analysis</li>
+          <li><i class="fas fa-check"></i> Recovery Massage (1/month)</li>
+        </ul>
+        <a href="#" class="cta-button">Join Now</a>
+      </div>
+    </div>
+    
+    <!-- <div class="membership-notes">
+      <p>* All plans include free parking and towel service</p>
+      <p>* 3-month minimum commitment for all memberships</p>
+    </div> -->
+  </div>
+</section>
 
   <footer>
     <div class="container">
@@ -74,6 +142,8 @@
       </div>
     </div>
   </footer>
+  </main>
+  <script src="script.js"></script>
 
 </body>
 </html>
